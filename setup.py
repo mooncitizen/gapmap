@@ -21,7 +21,7 @@ setup(
     license="MIT",
     packages=find_packages(),
     install_requires=[],
-    keywords=["cloudflare", "kv", "cache", "api", "cloudflare workers"],
+    keywords=["radius", "point", "mathlib"],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
