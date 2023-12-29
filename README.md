@@ -1,6 +1,8 @@
 [![Release](https://github.com/mooncitizen/gapmap/actions/workflows/pypi.yaml/badge.svg)](https://github.com/mooncitizen/gapmap/actions/workflows/pypi.yaml)
 
 
+![alt text](/images/logo150.png)
+
 ## GAPMAP
 
 A helper library that makes pathing simple in the real world. Point to Point distance finding and even Placename finding.
@@ -21,4 +23,7 @@ This can simply be described as stright line distance or as the crow flys. This 
 # Purpose
 
 The purpose of this library is to grow it into a trusted framework of getting real world distance finding for land, sea and air using real world restrictions. The ability to create pathing in a unified form to work with the likes of <b>Google Maps</b> and <b>Mapbox</b>
+
+# End Goal
+To create a machine/ai learned process that predict routing, pathing and distance. But got to start somewhere
 
