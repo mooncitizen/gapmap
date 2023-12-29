@@ -30,10 +30,9 @@ jobs:
           python-version: "3.x"
       - name: Install dependencies
         run: |
-          sudo apt-get install python3-setuptools
           python -m pip install --upgrade pip
           pip install build
-          pip install setuptools
+          pip install -U pip setuptools
       - name: Build package
         run: python setup.py sdist
       - name: Publish package distributions to PyPI
