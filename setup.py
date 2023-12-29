@@ -7,8 +7,8 @@ long_description = (this_directory / "README.md").read_text()
 VERSION = "1.0.1"
 AUTHOR = "Paul Gardiner"
 AUTHOR_EMAIL = "franticstone@gmail.com"
-APP_NAME = "radial"
-DESCRIPTION = "Radius and point finding"
+APP_NAME = "gapmap"
+DESCRIPTION = "Maptools"
 
 setup(
     name=APP_NAME,
