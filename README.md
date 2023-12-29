@@ -1,7 +1,7 @@
 [![Release](https://github.com/mooncitizen/gapmap/actions/workflows/pypi.yaml/badge.svg)](https://github.com/mooncitizen/gapmap/actions/workflows/pypi.yaml)
 
 
-![alt text](/images/logo150.png)
+![alt text](https://github.com/mooncitizen/gapmap/blob/main/images/logo150.png?raw=true)
 
 ## GAPMAP
 
