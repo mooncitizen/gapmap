@@ -10,6 +10,7 @@ A helper library that makes pathing simple in the real world. Point to Point dis
 Roadmap
 
 - [x] Placename finder (City, Country)
+- [x] Airport finder
 - [x] Euclidean Distances
 - [] GIS based Pathing
 - [] GIS Based timing
@@ -20,6 +21,11 @@ Roadmap
 ```pip install gapmap``` or download the latest binary from the releases tab
 
 # Usage
+1. [Get City by name](#get-city-by-name)
+2. [Distance between cities](#distance-between-cities)
+3. [Radius around coords](#radius-around-coords)
+4. [Is out of radius](#is-out-of-radius)
+5. [Airport Finder](#airport-finder)
 
 ### Get City by name
 ```python
@@ -348,6 +354,102 @@ This will return
   },
   "out_of_radius": false
 }
+```
+
+## Airport finder
+A helper function to find airports in a given area
+```python
+from gapmap import find_airports_near_position
+
+airports = find_airports_near_position(55.95206, -3.19648, radius=70)
+
+```
+
+This will return
+
+```json
+[
+  {
+    "id": "EGPF",
+    "iata": "GLA",
+    "icao": "EGPF",
+    "name": "Glasgow International Airport",
+    "elevation": 26,
+    "timezone": "Europe/London",
+    "distance_from_point": 48,
+    "coords": {
+      "latitude": 55.8718986511,
+      "longitude": -4.4330601692
+    },
+    "country": "GB",
+    "city": "Glasgow",
+    "subdomain": "Scotland"
+  },
+  {
+    "id": "EGPH",
+    "iata": "EDI",
+    "icao": "EGPH",
+    "name": "Edinburgh Airport",
+    "elevation": 135,
+    "timezone": "Europe/London",
+    "distance_from_point": 7,
+    "coords": {
+      "latitude": 55.9500007629,
+      "longitude": -3.3724999428
+    },
+    "country": "GB",
+    "city": "Edinburgh",
+    "subdomain": "Scotland"
+  },
+  {
+    "id": "EGPN",
+    "iata": "DND",
+    "icao": "EGPN",
+    "name": "Dundee Airport",
+    "elevation": 17,
+    "timezone": "Europe/London",
+    "distance_from_point": 35,
+    "coords": {
+      "latitude": 56.4524993896,
+      "longitude": -3.0258300304
+    },
+    "country": "GB",
+    "city": "Dundee",
+    "subdomain": "Scotland"
+  },
+  {
+    "id": "EGPT",
+    "iata": "PSL",
+    "icao": "EGPT",
+    "name": "Perth/Scone Airport",
+    "elevation": 397,
+    "timezone": "Europe/London",
+    "distance_from_point": 34,
+    "coords": {
+      "latitude": 56.439201355,
+      "longitude": -3.3722200394
+    },
+    "country": "GB",
+    "city": "Perth",
+    "subdomain": "Scotland"
+  },
+  {
+    "id": "EGQL",
+    "iata": "ADX",
+    "icao": "EGQL",
+    "name": "RAF Leuchars",
+    "elevation": 38,
+    "timezone": "Europe/London",
+    "distance_from_point": 32,
+    "coords": {
+      "latitude": 56.3728981018,
+      "longitude": -2.8684399128
+    },
+    "country": "GB",
+    "city": "St. Andrews",
+    "subdomain": "Scotland"
+  }
+]
 ```
 
 # Euclidean Distance

@@ -3,7 +3,11 @@ import json
 import math
 import geopy.distance
 
-from gapmap.distance import distance_between_two_coords, radius_around_coords
+from gapmap.distance import (
+    distance_between_two_coords,
+    radius_around_coords,
+    is_out_of_radius,
+)
 
 
 def pretty_print(dta):
@@ -146,6 +150,25 @@ def get_city_by_name(name, radius=0, expanded=False):
 def radius_around_city(cityName, radius):
     c = get_city_by_name(cityName)
     return radius_around_coords((c["latitude"], c["longitude"]), radius)
+
+
+def cities_near_lat_lon(lat, lon):
+    gc = geonamescache.GeonamesCache()
+    cities = gc.get_cities()
+
+    cities_near = []
+
+    for c in list(cities.keys()):
+        city = cities[c]
+        lata = city["latitude"]
+        lona = city["longitude"]
+
+        is_out = is_out_of_radius((lat, lon), (lata, lona), 50)
+
+        if is_out["distance"]["miles"] <= 50:
+            cities_near.append(remap_city_output(city))
+
+    return cities_near
 
 
 def distance_between_cities(fromCityName, toCityName):

@@ -5,6 +5,8 @@ from gapmap import (
     distance_between_cities,
     radius_around_coords,
     is_out_of_radius,
+    cities_near_lat_lon,
+    find_airports_near_position,
 )
 
 app = FastAPI()
@@ -53,6 +55,18 @@ async def radial_from_lat_lng(lat: float, lng: float, range_in_miles: int):
     radius = radius_around_coords(lat, lng, range_in_miles)
 
     return {"latitude": lat, "longitude": lng, "radius": radius}
+
+
+@app.get("/closest_city_to_coords/{lat}/{lng}")
+async def closest_to_coords(lat: float, lng: float):
+    city = cities_near_lat_lon(lat, lng)
+    return city
+
+
+@app.get("/airports_near/{lat}/{lng}")
+async def airports_near(lat: float, lng: float):
+    airports = find_airports_near_position(lat, lng)
+    return airports
 
 
 @app.get("/is_out_of_radius/{cityA}/{cityB}/{range_in_miles}")

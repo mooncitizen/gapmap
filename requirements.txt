@@ -3,3 +3,4 @@ airportsdata
 geonamescache
 geopy
 uvicorn
+airportsdata
