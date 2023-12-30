@@ -148,17 +148,31 @@ def radius_around_city(cityName, radius):
     return radius_around_coords((c["latitude"], c["longitude"]), radius)
 
 
-def distance_between_cities(cityNameOne, cityNameTwo):
-    c1 = get_city_by_name(cityNameOne)
-    c2 = get_city_by_name(cityNameTwo)
+def distance_between_cities(fromCityName, toCityName):
+    c1 = get_city_by_name(fromCityName)
+    c2 = get_city_by_name(toCityName)
 
-    coords_1 = (c1["cities"]["latitude"], c1["cities"]["longitude"])
-    coords_2 = (c2["cities"]["latitude"], c2["cities"]["longitude"])
+    cities1 = c1.get("cities", None)
+    cities2 = c2.get("cities", None)
+
+    if cities1 is not None:
+        if type(cities1) == dict:
+            c1 = cities1
+        else:
+            c1 = cities1[0]
+    if cities2 is not None:
+        if type(cities2) == dict:
+            c2 = cities2
+        else:
+            c2 = cities2[0]
+
+    coords_1 = (c1["latitude"], c1["longitude"])
+    coords_2 = (c2["latitude"], c2["longitude"])
 
     distance = distance_between_two_coords(coords_1, coords_2)
 
     return {
         "distances": distance,
-        cityNameOne: c1,
-        cityNameTwo: c2,
+        "from": c1,
+        "to": c2,
     }

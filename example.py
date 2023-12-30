@@ -29,7 +29,16 @@ async def distance_between_two_cities(city1: str, city2: str):
 @app.get("/radial_around_city/{city}/{range_in_miles}")
 async def radial_around_city(city: str, range_in_miles: int):
     city = get_city_by_name(city)
-    c = city["cities"]
+
+    cities = city.get("cities", None)
+
+    if cities is None:
+        c = city
+    else:
+        if type(cities) == dict:
+            c = cities
+        else:
+            c = cities[0]
 
     radius = radius_around_coords(c["latitude"], c["longitude"], range_in_miles)
 
