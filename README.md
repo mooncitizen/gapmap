@@ -12,6 +12,7 @@ Roadmap
 - [x] Placename finder (City, Country)
 - [x] Airport finder
 - [x] Euclidean Distances
+- [x] Radius around point generation
 - [] GIS based Pathing
 - [] GIS Based timing
 - [] Map Generation
