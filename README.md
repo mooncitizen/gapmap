@@ -13,10 +13,10 @@ Roadmap
 - [x] Airport finder
 - [x] Euclidean Distances
 - [x] Radius around point generation
-- [] GIS based Pathing
-- [] GIS Based timing
-- [] Map Generation
-- [] Hotswapping hosted maps
+- [ ] GIS based Pathing
+- [ ] GIS Based timing
+- [ ] Map Generation
+- [ ] Hotswapping hosted maps
 
 # Installation
 ```pip install gapmap``` or download the latest binary from the releases tab
